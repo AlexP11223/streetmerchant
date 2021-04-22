@@ -4,12 +4,9 @@ export const Alternate: Store = {
   currency: '€',
   labels: {
     inStock: {
-      container: 'span.d-flex > b:nth-child(1)',
+      container: '.details-cart-button',
       text: [
-        'auf lager',
-        'ware neu eingetroffen',
-        'in kürze versandfertig',
-        'ware im zulauf',
+        'In den Warenkorb',
       ],
     },
     maxPrice: {
