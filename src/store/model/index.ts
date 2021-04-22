@@ -131,6 +131,7 @@ import {SaveOnIt} from './saveonit';
 import {Scan} from './scan';
 import {Scorptec} from './scorptec';
 import {ShopTo} from './shopto';
+import {Skytech} from './skytech';
 import {SmythsToys} from './smythstoys';
 import {SmythsToysIE} from './smythstoys-ie';
 import {Spielegrotte} from './spielegrotte';
@@ -288,6 +289,7 @@ export const storeList = new Map([
   [Scan.name, Scan],
   [Scorptec.name, Scorptec],
   [ShopTo.name, ShopTo],
+  [Skytech.name, Skytech],
   [SmythsToys.name, SmythsToys],
   [SmythsToysIE.name, SmythsToysIE],
   [Spielegrotte.name, Spielegrotte],
