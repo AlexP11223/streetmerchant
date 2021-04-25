@@ -5,9 +5,7 @@ export const Alternate: Store = {
   labels: {
     inStock: {
       container: '.details-cart-button',
-      text: [
-        'In den Warenkorb',
-      ],
+      text: ['In den Warenkorb'],
     },
     maxPrice: {
       container: '.price > span:nth-child(1)',
