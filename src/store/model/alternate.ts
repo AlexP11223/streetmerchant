@@ -1,4 +1,6 @@
-import {Store} from './store';
+import {Link, Store} from './store';
+import {logger} from '../../logger';
+import {parseCard} from './helpers/card';
 
 export const Alternate: Store = {
   currency: '€',
@@ -1001,4 +1003,64 @@ export const Alternate: Store = {
     },
   ],
   name: 'alternate',
+  linksBuilder: {
+    builder: (docElement: cheerio.Cheerio, series) => {
+      
+      const productElements = docElement.find('.productBox');
+      const links: Link[] = [];
+      for (let i = 0; i < productElements.length; i++) {
+        const productElement = productElements.eq(i);
+        const titleElement = productElement.find('.product-name').first();
+        const title = titleElement.text()?.replace(/\n/g, ' ').trim();
+        const url = productElement.attr()?.href.replace(/\.de\/.+\/html\/product/, '.de/html/product');
+
+        if (!title || !url) {
+          continue;
+        }
+
+        const card = parseCard(title);
+
+        if (card) {
+          links.push({
+            brand: card.brand as any,
+            model: card.model,
+            series,
+            url,
+          });
+        } else {
+          logger.error(`Failed to parse card: ${title}`, {url});
+        }
+      }
+
+      return links;
+    },
+    waitForSelector: '.productBox',
+    urls: [
+      {
+        series: '3060',
+        url:
+          'https://www.alternate.de/Grafikkarten/RTX-3060?lpf=2',
+      },
+      {
+        series: '3060ti',
+        url:
+          'https://www.alternate.de/Grafikkarten/RTX-3060-Ti?lpf=2',
+      },
+      {
+        series: '3070',
+        url:
+          'https://www.alternate.de/Grafikkarten/RTX-3070?lpf=2',
+      },
+      {
+        series: '3080',
+        url:
+          'https://www.alternate.de/Grafikkarten/RTX-3080?lpf=2',
+      },
+      {
+        series: '3090',
+        url:
+          'https://www.alternate.de/Grafikkarten/RTX-3090?lpf=2',
+      },
+    ],
+  },
 };
