@@ -913,42 +913,6 @@ export const AlternateDe: Store = {
     },
     {
       brand: 'asus',
-      model: 'strix oc',
-      series: '3080',
-      url: 'https://www.alternate.de/html/product/1766848',
-    },
-    {
-      brand: 'msi',
-      model: 'suprim x',
-      series: '3080',
-      url: 'https://www.alternate.de/html/product/1758116',
-    },
-    {
-      brand: 'gainward',
-      model: 'phantom',
-      series: '3080',
-      url: 'https://www.alternate.de/html/product/1780243',
-    },
-    {
-      brand: 'gainward',
-      model: 'phoenix',
-      series: '3080',
-      url: 'https://www.alternate.de/html/product/1780244',
-    },
-    {
-      brand: 'msi',
-      model: 'gaming z trio',
-      series: '3080',
-      url: 'https://www.alternate.de/html/product/1758119',
-    },
-    {
-      brand: 'zotac',
-      model: 'amp holo',
-      series: '3080',
-      url: 'https://www.alternate.de/html/product/1758181',
-    },
-    {
-      brand: 'asus',
       model: 'strix',
       series: '3090',
       url: 'https://www.alternate.de/html/product/1672870',
